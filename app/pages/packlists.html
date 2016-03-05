@@ -1,0 +1,105 @@
+<!-- packlists.html -->
+<div class="site-wrapper packlist-wrapper">
+	<div class="cover-container">
+
+		<!-- HEADER -->
+		<div class="inner">
+			<a href="#"><h1 class="masthead-brand awesome-nav"><i class="icon ion-social-buffer"></i> <span class="thin">Awesome Packlists</span></h1></a>
+			<nav>
+		</div>
+
+
+		<!-- CONTENT CONTAINER -->
+		<div class="inner cover packlist-cover">
+
+			<!-- PACKLIST BUTTONS -->
+			<div id="packlist-buttons-container">
+				<ul id="packlist-buttons-filter">
+					<li><a ng-click="changeItemStatus()" ng-class="{selected: itemFilter===''}" class="packlist-btn">All</a></li>
+					<li><a ng-click="changeItemStatus(false)" ng-class="{selected: itemFilter===false}" class="packlist-btn">Active</a></li>
+					<li><a ng-click="changeItemStatus(true)" ng-class="{selected: itemFilter===true}" class="packlist-btn">Completed</a></li>
+				</ul>
+				<ul id="packlist-buttons-clear">
+					<li><a ng-click="clearCompleted()" class="packlist-btn">Clear Completed</a></li>
+				</ul>
+			</div>
+
+			<!-- PACKLIST CONTAINER -->
+			<div class="container">
+				<div id="list-wrapper">
+
+					<!-- CLOTHES -->
+					<div class="col-md-3">
+
+						<div class="list-item-container h-li"> <!-- #change position of label-->
+							<input type="checkbox" id="checkAllClothes" ng-model="checkAllClothes" ng-change="completeAll(checkAllClothes,'clothes')"/>
+							<label for ="checkAllClothes">Clothes ({{packList.clothes.length - completedCounter.clothes}})</label>
+						</div>
+
+						<div ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
+							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'clothes')">
+							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
+						</div>
+
+						<form ng-submit="addItem('clothesInput','clothes')">
+							<input type="text" ng-model="clothesInput" placeholder="Add New Item">
+						</form>
+
+					</div>
+
+					<!-- TOILETRIES -->
+					<div class="col-md-3">
+						<div class="list-item-container h-li"> <!-- #change position of label-->
+							<input type="checkbox" id="checkAllToiletries" ng-model="checkAllToiletries" ng-change="completeAll(checkAllToiletries,'toiletries')"/>
+							<label for ="checkAllToiletries">Toiletries ({{packList.toiletries.length - completedCounter.toiletries}})</label>
+						</div>
+
+						<div ng-repeat="x in packList.toiletries | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
+							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'toiletries')">
+							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
+						</div>
+
+						<form ng-submit="addItem('toiletriesInput','toiletries')">
+							<input type="text" ng-model="toiletriesInput" placeholder="Add New Item">
+						</form>
+					</div>
+
+					<!-- GADGETS -->
+					<div class="col-md-3">
+						<div class="list-item-container h-li"> <!-- #change position of label-->
+							<input type="checkbox" id="checkAllGadgets" ng-model="checkAllGadgets" ng-change="completeAll(checkAllGadgets,'gadgets')"/>
+							<label for ="checkAllGadgets">Gadgets ({{packList.gadgets.length - completedCounter.gadgets}})</label>
+						</div>
+
+						<div ng-repeat="x in packList.gadgets | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
+							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'gadgets')">
+							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
+						</div>
+
+						<form ng-submit="addItem('gadgetsInput','gadgets')">
+							<input type="text" ng-model="gadgetsInput" placeholder="Add New Item">
+						</form>
+					</div>
+
+					<!-- REMEMBER TO -->
+					<div class="col-md-3">
+						<div class="list-item-container h-li"> <!-- #change position of label-->
+							<input type="checkbox" id="checkAllRememberTo" ng-model="checkAllRememberTo" ng-change="completeAll(checkAllRememberTo,'rememberTo')"/>
+							<label for ="checkAllRememberTo">Remember To ({{packList.rememberTo.length - completedCounter.rememberTo}})</label>
+						</div>
+
+						<div ng-repeat="x in packList.rememberTo | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
+							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'rememberTo')">
+							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
+						</div>
+
+						<form ng-submit="addItem('rememberToInput','rememberTo')">
+							<input type="text" ng-model="rememberToInput" placeholder="Add New Item">
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

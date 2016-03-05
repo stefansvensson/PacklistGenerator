@@ -1,0 +1,499 @@
+/*
+/*
+* Globals
+*/
+
+/* Links */
+a,
+a:focus,
+a:hover {
+	color: #fff;
+}
+
+/* BUTTONS */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+	color: #v;
+	text-shadow: none; /* Prevent inheritence from `body` */
+	background-color: #fff;
+	border: 1px solid #fff;
+}
+
+.nav-btn-main-wrapper{
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 30px;
+}
+
+.nav-btn-thumb{
+	max-width: 80px;
+	padding-top: 15px;
+	padding-bottom: 3px;
+}
+
+.gender-btn-thumb{
+	max-width: 120px;
+	padding-top: 15px;
+	padding-bottom: 3px;
+}
+
+.nav-btn-description{
+	font-size: 12px;
+	padding:0px;
+}
+
+/*
+* Base structure
+*/
+
+html,
+body, .ng-scope {
+	height: 100%;
+	background-color: #333;
+	background: transparent;
+	margin:0;
+	min-height:100%;
+	font-family: 'Open Sans', sans-serif;
+}
+body {
+	color: #fff;
+	text-align: center;
+	
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+	display: table;
+	width: 100%;
+	height: 100%; 
+	min-height: 100%;
+}
+
+.packlist-wrapper{
+	display: block;
+}
+
+.site-wrapper-inner {
+	display: table-cell;
+	vertical-align: top;
+}
+.cover-container {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+	padding-top: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 40px;
+}
+
+/*
+* Header
+*/
+.masthead-brand {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+	display: inline-block;
+}
+.masthead-nav > li + li {
+	margin-left: 20px;
+}
+.masthead-nav > li > a {
+	padding-right: 0;
+	padding-left: 0;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff; /* IE8 proofing */
+	color: rgba(255,255,255,.75);
+	border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+	background-color: transparent;
+	border-bottom-color: #a9a9a9;
+	border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+	color: #fff;
+	border-bottom-color: #fff;
+}
+
+@media (min-width: 568px) {
+	.masthead-brand {
+		float: left;
+	}
+	.masthead-nav {
+		float: right;
+	}
+}
+
+
+/*
+* Cover
+*/
+
+.cover {
+	padding: 0 20px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cover-main{
+	max-width: 700px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.cover .btn-lg {
+	padding: 10px 20px;
+	font-weight: bold;
+}
+
+.packlist-cover{
+	width: 90%;
+	margin-top: 40px;
+	border: 0px solid gray;
+	border-radius: 10px;
+	padding: 15px;
+	background-color: rgba(0, 0, 0, 0.6)
+}
+
+
+/*
+* Footer
+*/
+
+.mastfoot {
+	color: #999; /* IE8 proofing */
+	color: rgba(255,255,255,.5);
+}
+.footer{
+	padding-bottom: 10px;
+}
+
+
+/*
+* Affix and center
+*/
+
+@media (min-width: 568px) {
+	/* Pull out the header and footer */
+	.masthead {
+		position: fixed;
+		top: 0;
+	}
+	.mastfoot {
+		position: fixed;
+		bottom: 0;
+	}
+	/* Start the vertical centering */
+	.site-wrapper-inner {
+		vertical-align: middle;
+	}
+	/* Handle the widths */
+	.masthead,
+	.mastfoot,
+	.cover-container {
+		width: 100%; /* Must be percentage or pixels for horizontal alignment */
+	}
+
+	.container{
+		width: 190px;
+		padding:0px;
+	}
+}
+
+@media (min-width: 700px){
+	.cover{
+		min-width:700px;
+	}
+}
+
+@media (min-width: 992px) {
+	.masthead,
+	.mastfoot,
+	.cover-container {
+		width: 90%;
+	}
+
+	.container{
+		width: 100%;
+	}
+}
+
+/* CHECKBOXES */
+label {
+	background:transparent;
+	position: relative;
+	margin: 0 3rem 0 0;
+	cursor: pointer;
+	padding-left: 25px;
+}
+
+label:before {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	content: "";
+	position: absolute;
+	left: 0rem;
+	width: 20px;
+	height: 20px;
+	/*border: 3px solid #f2f2f2;*/
+	border: 1px solid white;
+	border-radius: 3px;
+}
+
+input:checked + label {
+	color:gray;
+	text-decoration: line-through;
+	transition: all ease-in-out .3s;
+}
+
+input:checked + label:before {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	height: .75rem;
+	border-radius: 0px;
+	border: 2px solid #009688;
+	border-top-style: none;
+	border-right-style: none;
+	top:0.4rem;
+	width: 1.7rem;
+}
+
+input:checked + label:after {
+
+	content: "";
+	position: absolute;
+	top: -0.125rem;
+	left: 0;
+	width: 2rem;
+	height: 2rem;
+	cursor: pointer;
+}
+/* hide hecbox */
+[type="checkbox"] {
+	position:fixed;
+	left:-9999px;
+}
+
+#packlist-buttons-container{
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+} 
+
+#list-wrapper{
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#packlist-buttons-filter {
+	float: left;
+	cursor: pointer;
+	padding-left: 0px;
+}
+
+#packlist-buttons-filter > li{
+	display: inline;
+}
+
+#packlist-buttons-filter > li + li{
+	margin-left: 0px;
+}
+
+#packlist-buttons-filter > li > a {
+	padding-right: 3px;
+	padding-left: 3px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	font-size: 14px;
+	color: rgba(255,255,255,.5);
+	border: 1px solid transparent;
+	text-decoration: none;
+}
+
+#packlist-buttons-filter > li > a:hover,
+#packlist-buttons-filter > li > a.selected {
+	border-color: rgba(255,255,255,.5);
+}
+#packlist-buttons-filter > li > a.selected{
+	border-color: white;
+	color: white;
+}
+
+#packlist-buttons-clear{
+	float: right;
+	list-style: none;
+	cursor: pointer;
+	border: 1px solid transparent;
+}
+
+#packlist-buttons-clear > li > a {
+	padding-right: 3px;
+	padding-left: 3px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	font-size: 14px;
+	color: white;
+	text-decoration: none;
+}
+
+.list-item-container{
+	border:red solid 0px;
+	text-align: left;
+	background: transparent;
+}
+
+.checkbox-container{
+	display: inline-block;
+	border:solid yellow 0px;
+	width: 20px;
+	height: 20px;
+}
+
+.label-container{
+	display: inline-block;
+	padding-left: 10px;
+	height: 20px;
+	position: absolute;
+	width: 100%;
+}
+
+label .ng-binding{
+	margin-top: 0px;
+	margin-left:10px;
+	margin-bottom: 0px;
+}
+
+.ng-binding{
+	font-weight: normal;
+	padding-bottom: 5px;
+}
+
+.h-li{
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+.wrapper {
+	width: 960px;
+	margin: 50px auto;
+}
+
+input:focus, input[type]:focus {   
+	box-shadow: 0 0px 0px inset, 0 0 0px;
+	outline: 0 none;
+}
+
+.col-md-3{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+input[type="text"]
+{
+	background: transparent;
+	border: 1px solid gray;
+	height: 30px;
+	width: 80%;
+	border-radius: 3px;
+	color: white;
+	padding-left: 5px;
+}
+
+::-webkit-input-placeholder {
+	font-style: italic;
+}
+.ng-valid{
+	text-align: left;
+}
+
+.packlist-btn{
+	text-decoration: none;
+	background: transparent;
+	color: white;
+	border: solid 0px white;
+	border-radius: 3px;
+}
+
+.packlist-btn.selected{
+	border: solid 1px white;
+}
+
+#filters li {
+	display: inline;
+}
+
+#filters li a {
+	color: inherit;
+	margin: 3px;
+	padding: 3px 7px;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+#filters li a.selected,
+#filters li a:hover {
+	border-color: rgba(175, 47, 47, 0.1);
+}
+
+#filters li a.selected {
+	border-color: rgba(175, 47, 47, 0.2);
+}
+
+#background-image-container{
+	width: 100%;
+	height: 100%;
+	background-image:url("img/cover3.jpg");
+	background-position: 50%, 50%;
+	background-size: cover;
+}
+
+#overlay{
+	width: 100%;
+	height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.thin {
+    font-weight: 200;
+}
+
+.awesome {
+    clear: both;
+    line-height: 1.8;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+
+#awesome-cover{
+	font-size: 55px;
+}
+
+.awesome-nav{
+	font-size: 32px;
+}
+
+
+
+
