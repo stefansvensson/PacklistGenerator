@@ -1,32 +1,24 @@
 {
   "vacations": [
     {
-      "summerVacation": {
         "id": "summervacation",
         "imageUrl": "icons/summer.svg",
         "name": "Summer Vacation"
-      }
     },
     {
-      "winterVacation": {
         "id": "wintervacation",
         "imageUrl": "icons/winter.svg",
         "name": "Winter Vacation"
-      }
     },
     {
-      "cityWeekend": {
         "id": "cityweekend",
         "imageUrl": "icons/city-weekend.svg",
         "name": "City Weekend"
-      }
     },
     {
-      "emptyList": {
         "id": "emptylist",
         "imageUrl": "icons/emptylist.svg",
         "name": "Empty List"
-      }
     }
   ],
   "gender": [
