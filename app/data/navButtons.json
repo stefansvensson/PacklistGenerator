@@ -31,18 +31,14 @@
   ],
   "gender": [
     {
-      "male": {
         "id": "male",
         "imageUrl": "icons/male.svg",
         "name": "Male"
-      }
     },
     {
-      "female": {
         "id": "female",
         "imageUrl": "icons/female.svg",
         "name": "Female"
-      }
     }
   ]
 }

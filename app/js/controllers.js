@@ -15,6 +15,13 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
         });
     }]);
 
+    awesomeAppControllers.controller('genderController', ['$scope', '$http', function($scope, $http) {
+
+        $http.get('data/navButtons.json').success(function(data) {
+          $scope.navButtons = data;
+        });
+    }]);
+
     awesomeAppControllers.controller('packlistsController', ['$scope', '$routeParams', '$http',function($scope, $routeParams, $http) {
         $scope.btnId = $routeParams.btnId;
 

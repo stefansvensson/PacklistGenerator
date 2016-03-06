@@ -19,6 +19,12 @@
             })
 
             // route for the about page
+            .when('/gender', {
+                templateUrl : 'pages/gender.html',
+                controller  : 'genderController'
+            })
+
+            // route for the about page
             .when('/settings', {
                 templateUrl : 'pages/settings.html',
                 controller  : 'settingsController'
