@@ -167,6 +167,7 @@ body {
 	border: 0px solid gray;
 	border-radius: 10px;
 	padding: 15px;
+	padding-bottom: 0px;
 	background-color: rgba(0, 0, 0, 0.6)
 }
 .settings-cover{
@@ -221,7 +222,7 @@ body {
 
 	.container{
 		width: 190px;
-		padding:0px;
+		padding:20px;
 	}
 }
 
@@ -504,6 +505,11 @@ input[type="text"]
 	font-size: 32px;
 }
 
+#warning-Msg{
+	color:darkred;
+	height: 20px;
+	margin-top: -20px;
+}
 
 
 

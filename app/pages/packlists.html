@@ -19,10 +19,13 @@
 					<li><a ng-click="changeItemStatus(false)" ng-class="{selected: itemFilter===false}" class="packlist-btn">Active</a></li>
 					<li><a ng-click="changeItemStatus(true)" ng-class="{selected: itemFilter===true}" class="packlist-btn">Completed</a></li>
 				</ul>
+
 				<ul id="packlist-buttons-clear">
 					<li><a ng-click="clearCompleted()" class="packlist-btn">Clear Completed</a></li>
 				</ul>
 			</div>
+
+			
 
 			<!-- PACKLIST CONTAINER -->
 			<div class="container">
@@ -100,6 +103,9 @@
 
 				</div>
 			</div>
+
+			<div data-ng-show="showError" ng-class="{fade:doFade}" id="warning-Msg">{{errorMessage}}</div>
+
 		</div>
 	</div>
 </div>

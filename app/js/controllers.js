@@ -22,7 +22,7 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
         });
     }]);
 
-    awesomeAppControllers.controller('packlistsController', ['$scope', '$routeParams', '$http',function($scope, $routeParams, $http) {
+    awesomeAppControllers.controller('packlistsController', ['$scope', '$routeParams', '$timeout', '$http',function($scope, $routeParams, $timeout, $http) {
         $scope.btnId = $routeParams.btnId;
 
         $scope.itemFilter = '';
@@ -67,18 +67,25 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
 
         // add item to one of the sublists
         $scope.addItem = function(inputField,list){
-            if(!$scope[inputField]==""){
+            //reset
+            $scope.showError = false;
+            $scope.doFade = false;
 
-                $scope.hasMatch =false;
+            $scope.errorMessage = "Error: Item already in list";
+
+            if(!$scope[inputField]==""){
 
                 for (var index = 0; index < $scope.packList[list].length; ++index) {
                     var item = $scope.packList[list][index];
                     if(item.packListItem == $scope[inputField]){
-                        $scope.hasMatch = true;
+                        $scope.showError = true;
+                        $timeout(function(){
+                            $scope.doFade = true;
+                        }, 1000);
                         break;
                     };
                 };
-                if(!$scope.hasMatch){
+                if(!$scope.showError){
                     $scope.packList[list].push({packListItem:$scope[inputField], done:false});
                     $scope[inputField] = "";
                 };
