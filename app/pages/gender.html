@@ -1,27 +1,22 @@
-<!-- settings.html -->
-	<div class="site-wrapper">
-		<div class="site-wrapper-inner">
-			<div class="cover-container">
+<!-- gender.html -->
+<div class="site-wrapper">
+	<div class="site-wrapper-inner">
+		<div class="cover-container">
 
-				<div class="masthead clearfix">
-					<div class="inner">
-						<a href="#"><h1 class="masthead-brand awesome-nav"><i class="icon ion-social-buffer"></i> <span class="thin">Awesome Packlists</span></h1></a>
-					</div>
+			<div class="masthead clearfix">
+				<div class="inner">
+					<a href="#"><h1 class="masthead-brand awesome-nav"><i class="icon ion-social-buffer"></i><span class="thin">Awesome Packlists</span></h1></a>
 				</div>
-
-				<div class="inner settings-cover">
-					<h2 class="cover-heading">Make a selection below:</h1>
-
-					<div ng-repeat="x in navButtons.gender" class="nav-btn-main-wrapper">
-						<div>
-							<a href="#/settings/"><img ng-src="{{x.imageUrl}}" class="gender-btn-thumb" alt="{{x.name}}"></a>
-						</div>
-						<div>
-							<a  class="nav-btn-description" href="#/settings/">{{x.name}}</a>
-						</div>
-					</div>
-
 			</div>
+
+			<div class="inner settings-cover">
+
+				<h2 class="cover-heading">Make a selection below:</h2>
+
+				<div ng-repeat="x in navButtons.gender" class="nav-btn-main-wrapper">
+					<div><a href="#/settings/"><img ng-src="{{x.imageUrl}}" class="gender-btn-thumb" alt="{{x.name}}"></a></div>
+					<a  class="nav-btn-description" href="#/settings/">{{x.name}}</a>
+				</div>
 
 				<div class="mastfoot">
 					<div class="inner footer">
@@ -31,9 +26,10 @@
 
 			</div>
 
-		</div>
 
+		</div>
 	</div>
+</div>
 
 
 
