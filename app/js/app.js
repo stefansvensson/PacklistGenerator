@@ -4,6 +4,7 @@
 		// include ngRoute for all routing needs
     var awesomeApp = angular.module('awesomeApp', [ 
         'ngRoute',
+        'ngAnimate',
         'awesomeAppControllers',
         'awesomeAppFilters'
     ]);

@@ -39,7 +39,7 @@
 							<label for ="checkAllClothes">Clothes ({{packList.clothes.length - completedCounter.clothes}})</label>
 						</div>
 
-						<div ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
+						<div class="animate-repeat" ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'clothes')">
 							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
 						</div>
@@ -57,7 +57,7 @@
 							<label for ="checkAllToiletries">Toiletries ({{packList.toiletries.length - completedCounter.toiletries}})</label>
 						</div>
 
-						<div ng-repeat="x in packList.toiletries | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
+						<div class="animate-repeat" ng-repeat="x in packList.toiletries | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'toiletries')">
 							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
 						</div>
@@ -74,7 +74,7 @@
 							<label for ="checkAllGadgets">Gadgets ({{packList.gadgets.length - completedCounter.gadgets}})</label>
 						</div>
 
-						<div ng-repeat="x in packList.gadgets | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
+						<div class="animate-repeat" ng-repeat="x in packList.gadgets | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'gadgets')">
 							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
 						</div>
@@ -91,7 +91,7 @@
 							<label for ="checkAllRememberTo">Remember To ({{packList.rememberTo.length - completedCounter.rememberTo}})</label>
 						</div>
 
-						<div ng-repeat="x in packList.rememberTo | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
+						<div class="animate-repeat" ng-repeat="x in packList.rememberTo | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'rememberTo')">
 							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
 						</div>
