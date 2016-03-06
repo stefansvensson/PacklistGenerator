@@ -98,12 +98,12 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
          $scope.updateHeightOfImage = function(){
             var bckgrndImg = document.getElementById('background-image-container');
             var overlay = document.getElementById('overlay');
-            var coverContainer = document.getElementById('cover-container');
+            var packlistFrame = document.getElementById('packlist-frame');
             console.log("b" + bckgrndImg.clientHeight);
             console.log(overlay.clientHeight);
-            console.log(coverContainer.clientHeight);
+            console.log(packlistFrame.clientHeight);
 
-            if(overlay.clientHeight>bckgrndImg.clientHeight){
+            if(packlistFrame.clientHeight+25>bckgrndImg.clientHeight){
                 bckgrndImg.setAttribute("style","height:"+(overlay.clientHeight+25)+"px")
             };
         };
