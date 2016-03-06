@@ -22,9 +22,8 @@ a:hover {
 
 .nav-btn-main-wrapper{
 	display: inline-block;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-bottom: 30px;
+	padding: 5px;
+	width: 160px;
 }
 
 .nav-btn-thumb{
@@ -174,7 +173,7 @@ body {
 	padding: 0 20px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 40%;
+	max-width: 390px;
 	margin-top: 40px;
 	border: 0px solid gray;
 	border-radius: 10px;
@@ -222,7 +221,9 @@ body {
 
 	.container{
 		width: 190px;
-		padding:20px;
+		padding-bottom: 30px;
+		padding-left: 15px;
+		padding-right: 0px;
 	}
 }
 
@@ -308,6 +309,10 @@ input:checked + label:after {
 	display: inline-block;
 	width: 100%;
 	text-align: left;
+} 
+
+#packlist-buttons-container > ul{
+	margin-bottom: 0px;
 } 
 
 #list-wrapper{
@@ -507,9 +512,11 @@ input[type="text"]
 
 #warning-Msg{
 	color:darkred;
-	height: 20px;
-	margin-top: -20px;
+	height: 30px;
+	margin-top: -30px;
+	padding-top: 5px;
 }
+
 
 
 

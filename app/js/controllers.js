@@ -77,7 +77,7 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
 
                 for (var index = 0; index < $scope.packList[list].length; ++index) {
                     var item = $scope.packList[list][index];
-                    if(item.packListItem == $scope[inputField]){
+                    if(item.packListItem.toUpperCase() == $scope[inputField].toUpperCase()){
                         $scope.showError = true;
                         $timeout(function(){
                             $scope.doFade = true;
@@ -88,20 +88,22 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
                 if(!$scope.showError){
                     $scope.packList[list].push({packListItem:$scope[inputField], done:false});
                     $scope[inputField] = "";
+                    $scope.updateHeightOfImage();
                 };
             };
             // #change Add check if already in list. A warning label should appear and then fade slowly
         };
 
+        /* #start here. Checl chrome console */
          $scope.updateHeightOfImage = function(){
             var bckgrndImg = document.getElementById('background-image-container');
             var overlay = document.getElementById('overlay');
-            console.log(bckgrndImg.clientHeight);
+            var coverContainer = document.getElementById('cover-container');
+            console.log("b" + bckgrndImg.clientHeight);
             console.log(overlay.clientHeight);
+            console.log(coverContainer.clientHeight);
 
             if(overlay.clientHeight>bckgrndImg.clientHeight){
-                /*alert(bckgrndImg.clientHeight);
-                alert(overlay.clientHeight);*/
                 bckgrndImg.setAttribute("style","height:"+(overlay.clientHeight+25)+"px")
             };
         };
