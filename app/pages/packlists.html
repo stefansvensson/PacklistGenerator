@@ -39,9 +39,22 @@
 							<label for ="checkAllClothes">Clothes ({{packList.clothes.length - completedCounter.clothes}})</label>
 						</div>
 
-						<div class="animate-repeat" ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
+						<div ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter: statusFilter" 
+							class="list-item-container animate-repeat" 
+							ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'clothes')">
-							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}<span ng-click="deleteSingleItem(x,'clothes')" class="list-item-delete"><i class="fa fa-times fa-sm"></i></span></label>
+							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
+								
+								<span ng-show="x.flag=true || hover=true" ng-click="x.flag=!x.flag" class="list-item-btns flag">
+									<span ng-show="x.flag"><i class="fa fa-flag "></i></span>
+									<span ng-show="!x.flag&&hover"><i class="fa fa-flag "></i></span>
+								</span>
+
+								<span ng-click="deleteSingleItem(x,'clothes')" class="list-item-btns delete">
+									<i class="fa fa-times"></i>
+								</span>
+							
 						</div>
 
 						<form ng-submit="addItem('clothesInput','clothes')">

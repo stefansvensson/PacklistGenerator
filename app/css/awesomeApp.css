@@ -161,7 +161,7 @@ body {
 }
 
 .packlist-cover{
-	width: 90%;
+	width: 95%;
 	margin-top: 40px;
 	border: 0px solid gray;
 	border-radius: 10px;
@@ -251,7 +251,8 @@ label {
 	position: relative;
 	cursor: pointer;
 	padding-left: 25px;
-	width: 90%;
+	width: 80%;
+	word-wrap: break-word;
 }
 
 label:before {
@@ -305,22 +306,32 @@ input:checked + label:after {
 	left:-9999px;
 }
 
-.list-item-delete{
-	float: right;
-	margin-right: 2%;
-	display: none;
+.list-item-btns{
+	text-align: right;
+	font-size:17px;
+	cursor: pointer;
+	width: 17px;
+	border:1px solid transparent;
+}
+
+.delete{
 	color: darkred;
+	display: none;
+}
+
+.flag{
+	color: orange;
 }
 
 .fa-sm {
-    font-size:17px;
+    
 }
 
-.animate-repeat:hover .list-item-delete{
+.animate-repeat:hover .list-item-btns{
 	display:inline;
 }
 
-.animate-repeat:hover label{
+.animate-repeat:hover input:not(:checked) + label{
 	font-weight: bold;
 	font-size: 15px;
 }
