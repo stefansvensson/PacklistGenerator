@@ -249,9 +249,9 @@ body {
 label {
 	background:transparent;
 	position: relative;
-	margin: 0 3rem 0 0;
 	cursor: pointer;
 	padding-left: 25px;
+	width: 90%;
 }
 
 label:before {
@@ -303,6 +303,26 @@ input:checked + label:after {
 [type="checkbox"] {
 	position:fixed;
 	left:-9999px;
+}
+
+.list-item-delete{
+	float: right;
+	margin-right: 2%;
+	display: none;
+	color: darkred;
+}
+
+.fa-sm {
+    font-size:17px;
+}
+
+.animate-repeat:hover .list-item-delete{
+	display:inline;
+}
+
+.animate-repeat:hover label{
+	font-weight: bold;
+	font-size: 15px;
 }
 
 #packlist-buttons-container{
@@ -429,7 +449,7 @@ input[type="text"]
 	background: transparent;
 	border: 1px solid gray;
 	height: 30px;
-	width: 80%;
+	width: 90%;
 	border-radius: 3px;
 	color: white;
 	padding-left: 5px;
@@ -517,10 +537,12 @@ input[type="text"]
 	padding-top: 5px;
 }
 
+/* ANIMATIONS
+============================================================================= */
+
 .animate-repeat {
 	text-align: left;
 }
-
 
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leave {
@@ -554,8 +576,6 @@ input[type="text"]
 	height: 20px;
 	opacity: 1;
 }
-
-
 
 
 

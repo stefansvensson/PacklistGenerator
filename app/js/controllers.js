@@ -4,11 +4,10 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
     // create the controller and inject angular's $scope
     awesomeAppControllers.controller('mainController',function($scope) {
         
-        // create a message to display in out view
-        $scope.message = 'Hej Stefan';
     }); 
 
     awesomeAppControllers.controller('settingsController', ['$scope', '$http', function($scope, $http) {
+        $scope.pageClass = 'settings-page';
 
         $http.get('data/navButtons.json').success(function(data) {
           $scope.navButtons = data;
@@ -16,7 +15,8 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
     }]);
 
     awesomeAppControllers.controller('genderController', ['$scope', '$http', function($scope, $http) {
-
+        $scope.pageClass = 'settings-page';
+        
         $http.get('data/navButtons.json').success(function(data) {
           $scope.navButtons = data;
         });
@@ -154,6 +154,11 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
             } else {
                 $scope.completedCounter[list] = 0;
             }
+        };
+
+        $scope.deleteSingleItem = function(item,list){
+            console.log(item.packListItem + list);
+            $scope.packList[list].splice($scope.packList[list].indexOf(item),1);
         };
     }]);
 

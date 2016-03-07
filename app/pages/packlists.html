@@ -41,7 +41,7 @@
 
 						<div class="animate-repeat" ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'clothes')">
-							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
+							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}<span ng-click="deleteSingleItem(x,'clothes')" class="list-item-delete"><i class="fa fa-times fa-sm"></i></span></label>
 						</div>
 
 						<form ng-submit="addItem('clothesInput','clothes')">
@@ -59,7 +59,7 @@
 
 						<div class="animate-repeat" ng-repeat="x in packList.toiletries | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'toiletries')">
-							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
+							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}<span ng-click="deleteSingleItem(x,'toiletries')" class="list-item-delete"><i class="fa fa-times fa-sm"></i></span></label>
 						</div>
 
 						<form ng-submit="addItem('toiletriesInput','toiletries')">
@@ -76,7 +76,7 @@
 
 						<div class="animate-repeat" ng-repeat="x in packList.gadgets | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'gadgets')">
-							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
+							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}<span ng-click="deleteSingleItem(x,'gadgets')" class="list-item-delete"><i class="fa fa-times fa-sm"></i></span></label>
 						</div>
 
 						<form ng-submit="addItem('gadgetsInput','gadgets')">
@@ -93,7 +93,7 @@
 
 						<div class="animate-repeat" ng-repeat="x in packList.rememberTo | orderBy:'packListItem' | filter: statusFilter" class="list-item-container">
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'rememberTo')">
-							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}</label>
+							<label for="{{x.packListItem}}"> {{x.packListItem | capitalize}}<span ng-click="deleteSingleItem(x,'rememberTo')" class="list-item-delete"><i class="fa fa-times fa-sm"></i></span></label>
 						</div>
 
 						<form ng-submit="addItem('rememberToInput','rememberTo')">
