@@ -590,5 +590,81 @@ input[type="text"]
 
 
 
+.cbutton {
+	position: relative;
+	display: inline-block;
+	margin: 1em;
+	padding: 0;
+	border: none;
+	background: none;
+	color: rgba(255,255,255,0.5);
+	font-size: 1.4em;
+	overflow: visible;
+	-webkit-transition: color 0.7s;
+	transition: color 0.7s;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.cbutton.cbuttonclick,
+.cbutton:focus {
+	outline: none;
+	color: white;
+}
+
+.cbutton__icon {
+	display: block;
+}
+
+.cbutton::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -35px 0 0 -35px;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	content: '';
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Jelena */
+.cbutton--effect-jelena::after {
+	border: 2px solid rgba(255,255,255,0.5);
+}
+
+.cbutton--effect-jelena.cbuttonclick::after {
+	-webkit-animation: anim-effect-jelena 0.3s ease-out forwards;
+	animation: anim-effect-jelena 0.3s ease-out forwards;
+}
+
+@-webkit-keyframes anim-effect-jelena {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale3d(0.5, 0.5, 1);
+		transform: scale3d(0.5, 0.5, 1);
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale3d(1.2, 1.2, 1);
+		transform: scale3d(.7, .7, 1);
+	}
+}
+
+@keyframes anim-effect-jelena {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale3d(0.5, 0.5, 1);
+		transform: scale3d(0.5, 0.5, 1);
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale3d(1.2, 1.2, 1);
+		transform: scale3d(.7, .7, 1);
+	}
+}
+
+
+
 
 

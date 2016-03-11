@@ -14,12 +14,21 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
         });
     }]);
 
-    awesomeAppControllers.controller('genderController', ['$scope', '$http', function($scope, $http) {
+    awesomeAppControllers.controller('genderController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
         $scope.pageClass = 'settings-page';
         
         $http.get('data/navButtons.json').success(function(data) {
           $scope.navButtons = data;
         });
+
+        $scope.btnClick = function(){
+            console.log("btnClick");
+            $scope.bool = true;
+            $timeout(function(){
+                $scope.bool = false
+                console.log("false");
+            }, 300);
+        };
     }]);
 
     awesomeAppControllers.controller('packlistsController', ['$scope', '$routeParams', '$timeout', '$http',function($scope, $routeParams, $timeout, $http) {
@@ -88,8 +97,8 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
                 if(!$scope.showError){
                     $scope.packList[list].push({packListItem:$scope[inputField], done:false});
                     $scope[inputField] = "";
-                    $scope.updateHeightOfImage();
                 };
+                $scope.updateHeightOfImage();
             };
             // #change Add check if already in list. A warning label should appear and then fade slowly
         };
@@ -103,8 +112,8 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
             console.log(overlay.clientHeight);
             console.log(packlistFrame.clientHeight);
 
-            if(packlistFrame.clientHeight+25>bckgrndImg.clientHeight){
-                bckgrndImg.setAttribute("style","height:"+(overlay.clientHeight+25)+"px")
+            if(packlistFrame.clientHeight+30>bckgrndImg.clientHeight){
+                bckgrndImg.setAttribute("style","height:"+(packlistFrame.clientHeight+30)+"px")
             };
         };
 
@@ -160,6 +169,7 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
             console.log(item.packListItem + list);
             $scope.packList[list].splice($scope.packList[list].indexOf(item),1);
         };
+
     }]);
 
     awesomeAppControllers.controller('testingController', ['$scope', '$routeParams', '$http',function($scope, $routeParams, $http) {
