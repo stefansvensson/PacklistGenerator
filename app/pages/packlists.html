@@ -56,8 +56,11 @@
 								</span>		
 						</div>
 
-						<form ng-submit="addItem('clothesInput','clothes')">
-							<input type="text" ng-model="clothesInput" placeholder="Add New Item">
+						<form ng-class="{'input--filled': clothesInput}" ng-submit="addItem('clothesInput','clothes')" class="inputharuki input--haruki" autocomplete="off">
+							<input ng-model="clothesInput" class="input__field input__field--haruki" type="text" id="input-1" />
+							<label id="topBorderInput" class="input__label input__label--haruki" for="input-1">
+								<span class="input__label-content input__label-content--haruki">Add New Item</span>
+							</label>
 						</form>
 
 					</div>
@@ -77,7 +80,16 @@
 						<form ng-submit="addItem('toiletriesInput','toiletries')">
 							<input type="text" ng-model="toiletriesInput" placeholder="Add New Item">
 						</form>
+
+						<span class="inputharuki input--haruki">
+							<input class="input__field input__field--haruki" type="text" id="input-1" />
+							<label id="topBorderInput" class="input__label input__label--haruki" for="input-1">
+								<span class="input__label-content input__label-content--haruki">First Name</span>
+							</label>
+						</span>
 					</div>
+
+
 
 					<!-- GADGETS -->
 					<div class="col-md-3">
