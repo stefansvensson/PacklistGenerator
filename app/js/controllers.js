@@ -170,6 +170,15 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
             $scope.packList[list].splice($scope.packList[list].indexOf(item),1);
         };
 
+        $scope.btnClick = function(){
+            console.log("btnClick");
+            $scope.bool = true;
+            $timeout(function(){
+                $scope.bool = false
+                console.log("false");
+            }, 300);
+        };
+
     }]);
 
     awesomeAppControllers.controller('testingController', ['$scope', '$routeParams', '$http',function($scope, $routeParams, $http) {
