@@ -322,7 +322,7 @@ input:checked + label:after {
 	width: 100%;
 	text-align: left;
 
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 } 
 
 #packlist-buttons-container > ul{
@@ -812,8 +812,8 @@ input[type="text"]
 
 .input--search {
 	margin-left: 10px;
-	float: right;
-	max-width: 150px;
+	float: left;
+	max-width: 100px;
 }
 
 .input__field--search {
@@ -821,7 +821,7 @@ input[type="text"]
 	width: 100%;
 	background: transparent;
 	color: white;
-
+	padding-left: 2px;
 }
 
 .input__label--search {
@@ -830,20 +830,21 @@ input[type="text"]
 	text-align: left;
 	pointer-events: none;
 	padding: 0;
-	font-style: italic;
+	font-style: normal;
 }
 .bottom-border{
+	margin-top: -2px;
 	height: 2px;
 	width: 100%;
 	background: gray;
-	-webkit-transform: scale3d(1, .4, 1);
-	transform: scale3d(1, .4, 1);
+	-webkit-transform: scale3d(1, .5, 1);
+	transform: scale3d(1, .5, 1);
 	-webkit-transform-origin: 50% 100%;
 	transform-origin: 50% 100%;
 }
 
 .input__field--search:focus + .input__label--search .bottom-border{
-	background-color: #da7071;
+	background-color: white;
 
 	-webkit-transform: scale3d(1, 1, 1);
 	transform: scale3d(1, 1, 1);
@@ -853,7 +854,7 @@ input[type="text"]
 
 .bottom-border-after{
 	height: 2px;
-	background-color: #da7071;
+	background-color: white;
 	-webkit-transform: scale3d(1, 1, 1);
 	transform: scale3d(1, 1, 1);
 	-webkit-transform-origin: 50% 100%;
@@ -880,9 +881,10 @@ input[type="text"]
 .input__label-content--search {
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
-	font-style: italic;
+	font-style: normal;
 	padding-top: 0px;
 	padding-bottom: 0px;
+	padding-left: 2px;
 }
 
 .input__label--search::before {
@@ -906,13 +908,13 @@ input[type="text"]
 	-webkit-transform: translate3d(0, 110%, 0);
 	transform: translate3d(0, 110%, 0);
 	z-index: 11;
-	color: #da7071;
-	font-weight: bold;
+
+	font-weight: normal;
 }
 
 .input__field--search:focus + .input__label--search::after,
 .input--filled .input__label-content--search::after {
-	background-color: #da7071;
+	background-color: white;
 	-webkit-transform: scale3d(1, 1, 1);
 	transform: scale3d(1, 1, 1);
 }
