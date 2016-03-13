@@ -22,11 +22,9 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
         });
 
         $scope.btnClick = function(){
-            console.log("btnClick");
             $scope.bool = true;
             $timeout(function(){
                 $scope.bool = false
-                console.log("false");
             }, 300);
         };
     }]);
@@ -35,6 +33,7 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
         $scope.btnId = $routeParams.btnId;
 
         $scope.itemFilter = '';
+        $scope.flagFilter=false;
 
         $scope.completedCounter = {
             clothes:0,
@@ -90,7 +89,7 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
                         $scope.showError = true;
                         $timeout(function(){
                             $scope.doFade = true;
-                        }, 1000);
+                        }, 9000);
                         break;
                     };
                 };
@@ -100,17 +99,12 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
                 };
                 $scope.updateHeightOfImage();
             };
-            // #change Add check if already in list. A warning label should appear and then fade slowly
+            // 
         };
 
-        /* #start here. Checl chrome console */
          $scope.updateHeightOfImage = function(){
             var bckgrndImg = document.getElementById('background-image-container');
-            var overlay = document.getElementById('overlay');
             var packlistFrame = document.getElementById('packlist-frame');
-            console.log("b" + bckgrndImg.clientHeight);
-            console.log(overlay.clientHeight);
-            console.log(packlistFrame.clientHeight);
 
             if(packlistFrame.clientHeight+30>bckgrndImg.clientHeight){
                 bckgrndImg.setAttribute("style","height:"+(packlistFrame.clientHeight+30)+"px")
@@ -166,16 +160,13 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
         };
 
         $scope.deleteSingleItem = function(item,list){
-            console.log(item.packListItem + list);
             $scope.packList[list].splice($scope.packList[list].indexOf(item),1);
         };
 
         $scope.btnClick = function(){
-            console.log("btnClick");
             $scope.bool = true;
             $timeout(function(){
                 $scope.bool = false
-                console.log("false");
             }, 300);
         };
 
