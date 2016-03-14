@@ -26,12 +26,19 @@
 					<li><a ng-click="clearCompleted()" class="packlist-btn clear">Clear Completed</a></li>
 				</ul>
 
-				<form ng-class="{'input--filled': searchQuery}" class="inputharuki input--search" autocomplete="off">
-					<input ng-model="searchQuery" class="input__field input__field--search" type="text" id="input-1" />
-					<label id="remove-top-border" class="input__label input__label--search" for="input-1">
-						<span class="input__label-content input__label-content--search">Search</span>
-						<div ng-class="{'bottom-border-after': searchQuery}" class="bottom-border"></div>
-					</label>
+				<form ng-class="{'input--filled': query}" class="input--search" autocomplete="off">
+					<input ng-model="query" class="input__field--search" type="text"/>
+
+					<div ng-class="{'top-left-right-borders-after': query}" class="top-left-right-borders">
+
+						<label class="input__label--search">
+
+							<span class="input__label-content--search">Search</span>
+
+							<div ng-class="{'bottom-border-after': query}" class="bottom-border"></div>
+
+						</label>
+					</div>
 				</form>
 			</div>
 
@@ -53,7 +60,7 @@
 						</div>
 
 						<!-- NG-REPEAT -->
-						<div ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter:searchQuery | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+						<div ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter:{packListItem:query} | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
 
 							<!-- CHECKBOX & LABEL -->
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'clothes')">
@@ -91,7 +98,7 @@
 						</div>
 
 						<!-- NG-REPEAT -->
-						<div ng-repeat="x in packList.toiletries | orderBy:'packListItem' | filter:searchQuery | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+						<div ng-repeat="x in packList.toiletries | orderBy:'packListItem' | filter:{packListItem:query} | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
 
 							<!-- CHECKBOX & LABEL -->
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'toiletries')">
@@ -130,7 +137,7 @@
 						</div>
 
 						<!-- NG-REPEAT -->
-						<div ng-repeat="x in packList.gadgets | orderBy:'packListItem' | filter:searchQuery | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+						<div ng-repeat="x in packList.gadgets | orderBy:'packListItem' | filter:{packListItem:query} | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
 
 							<!-- CHECKBOX & LABEL -->
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'gadgets')">
@@ -167,7 +174,7 @@
 						</div>
 
 						<!-- NG-REPEAT -->
-						<div ng-repeat="x in packList.rememberTo | orderBy:'packListItem' | filter:searchQuery | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+						<div ng-repeat="x in packList.rememberTo | orderBy:'packListItem' | filter:{packListItem:query} | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
 
 							<!-- CHECKBOX & LABEL -->
 							<input type="checkbox" id="{{x.packListItem}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'rememberTo')">

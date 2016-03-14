@@ -34,6 +34,7 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
 
         $scope.itemFilter = '';
         $scope.flagFilter=false;
+        $scope.searchQuery='';
 
         $scope.completedCounter = {
             clothes:0,
