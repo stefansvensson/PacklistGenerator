@@ -35,6 +35,8 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
         $scope.itemFilter = '';
         $scope.flagFilter=false;
         $scope.searchQuery='';
+        $scope.isMale='';
+        $scope.vacation='';
 
         $scope.completedCounter = {
             clothes:0,
@@ -47,7 +49,7 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
             clothes:false,
             toiletries:false,
             gadgets:false,
-            rememberTo:false,
+            rememberTo:false
         };
 
         $http.get('data/' + $routeParams.btnId + '.json').success(function(data) {
@@ -79,6 +81,7 @@ var awesomeAppControllers = angular.module('awesomeAppControllers', []);
             //reset
             $scope.showError = false;
             $scope.doFade = false;
+            $scope.checkAll[list]=false;
 
             $scope.errorMessage = "Error: Item already in list";
 

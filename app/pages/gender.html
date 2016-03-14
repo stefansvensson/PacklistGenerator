@@ -10,18 +10,45 @@
 			</div>
 
 			<div class="inner settings-cover">
-				<button ng-class="{'cbuttonclick': bool}" class="cbutton cbutton--effect-jelena">
-					<i ng-click="btnClick()"  class="cbutton__icon fa fa-fw fa-step-backward"></i>
-				</button>
 
+				<div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
 
+					<!-- MALE -->
+					<div class="hi-icon" ng-class="{'nav-btn-selected': isMale==true}" ng-click="isMale=true">
+						<div class="nav-icon male" ng-class="{'nav-icon-selected': isMale==true}" alt=""></div>
+					</div>
 
-				<h2 class="cover-heading">Make a selection below:</h2>
+					<!-- FEMALE -->
+					<div class="hi-icon" ng-class="{'nav-btn-selected': isMale==false}" ng-click="isMale=false">
+						<div class="nav-icon female" ng-class="{'nav-icon-selected': isMale==false}" alt=""></div>
+					</div>
 
-				<div ng-repeat="x in navButtons.gender" class="nav-btn-main-wrapper">
-					<div><a href="#/settings/"><img ng-src="{{x.imageUrl}}" class="gender-btn-thumb" alt="{{x.name}}"></a></div>
-					<a  class="nav-btn-description" href="#/settings/">{{x.name}}</a>
+					<div class="h-ruler"></div>
+
+					<!-- SUMMER -->
+					<div class="hi-icon" ng-class="{'nav-btn-selected': vacation=='summer'}" ng-click="vacation='summer'">
+						<div class="nav-icon summer" ng-class="{'nav-icon-selected': vacation=='summer'}" alt=""></div>
+					</div>
+
+					<!-- WINTER -->
+					<div class="hi-icon" ng-class="{'nav-btn-selected': vacation=='winter'}" ng-click="vacation='winter'">
+						<div class="nav-icon winter" ng-class="{'nav-icon-selected': vacation=='winter'}" alt=""></div>
+					</div>
+
+					<!-- CITY -->
+					<div class="hi-icon" ng-class="{'nav-btn-selected': vacation=='city'}" ng-click="vacation='city'">
+						<div class="nav-icon city" ng-class="{'nav-icon-selected': vacation=='city'}" alt=""></div>
+					</div>
+
+					<!-- EMPTY -->
+					<div class="hi-icon" ng-class="{'nav-btn-selected': vacation=='empty'}" ng-click="vacation='empty'">
+						<div class="nav-icon empty-list" ng-class="{'nav-icon-selected': vacation=='empty'}" alt=""></div>
+					</div>
+
 				</div>
+
+				<a href="#/packlists/{{vacation}}" class="btn btn-lg btn-default">Generate Packlist</a>
+
 			</div>
 
 			<div class="mastfoot">
